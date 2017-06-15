@@ -1,0 +1,56 @@
+syntax = "proto3";
+//组队信息
+message Group
+{
+    int32 Id = 1;           	    //队伍ID  
+    int32 Command = 2;           	//队伍的操作命令，1创建队伍，2加入队伍，3退出队伍，4解散队伍
+}
+
+//人脸识别请求
+message Request
+{
+    RecognitionHeader rh = 1;      	//通用信息
+    ImgInfo imginfo = 2;        	//图片文件二进制内容，无需编码
+}
+
+
+
+
+//响应结果，被其他响应使用
+message Result
+{
+     uint32 code = 1;              // 错误代码 0成功，1失败
+     string msg = 2;               // 错误描述
+}
+
+//人脸识别通用信息
+message RecognitionHeader
+{
+    int32 server_id = 1;           	//业务ID   1 打卡，2 开车门
+    uint32 Sequence  = 2;          	//顺序号，客户端发起，从任意值开始，每次请求加1
+    int32 client_id = 3;           	//客户端ID，客户端唯一标示，用于记录日志标示客户端
+	string group_id = 4;			// 1、1~10000为企业号
+									//2、大于1000时为普通用户
+}
+
+//图片信息
+message ImgInfo
+{
+	int32 img_size = 1;
+	string imgmd5sum = 2;
+	bytes img = 3;
+}
+
+//人脸识别请求
+message RecognitionRequest
+{
+    RecognitionHeader rh = 1;      	//通用信息
+    ImgInfo imginfo = 2;        	//图片文件二进制内容，无需编码
+}
+
+//人脸识别响应
+message RecognitionResponse
+{
+    Result result = 1;	            // 响应结果
+    RecognitionHeader rh = 2;       //通用信息
+}

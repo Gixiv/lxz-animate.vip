@@ -26,6 +26,7 @@ import com.google.protobuf.MessageLite;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.lianggzone.netty.entity.ProtocolModule;
 import com.lianggzone.netty.server.handle.TcpServerHandler;
+import com.lianggzone.netty.server.handle.HttpRequestHandler;
 
 /**
  * <h3>概要:</h3>
@@ -54,7 +55,9 @@ public class WebSocketChannelInitializer extends ChannelInitializer<NioSocketCha
         pipeline.addLast(new HttpServerCodec());
         pipeline.addLast(new HttpObjectAggregator(65536));
         pipeline.addLast(new WebSocketServerCompressionHandler());
-        pipeline.addLast(new WebSocketServerProtocolHandler("/chat", null, true));
+        pipeline.addLast(new HttpRequestHandler("/ws"));
+       // pipeline.addLast(new WebSocketServerProtocolHandler("/chat"));
+        pipeline.addLast(new WebSocketServerProtocolHandler("/ws", null, true));
         pipeline.addLast(new MessageToMessageDecoder<WebSocketFrame>() {
             @Override
             protected void decode(ChannelHandlerContext ctx, WebSocketFrame frame, List<Object> objs) throws Exception {

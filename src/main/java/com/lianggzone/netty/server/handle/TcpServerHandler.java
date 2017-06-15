@@ -6,6 +6,9 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Component;
 import com.lianggzone.netty.entity.ProtocolModule;
 
@@ -17,6 +20,9 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 public class TcpServerHandler extends SimpleChannelInboundHandler<ProtocolModule.CommonProtocol> {
 	
 	public static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+	
+	 // 一个 ChannelGroup 代表一个队伍
+    private static Map<Integer, ChannelGroup> channelGroupMap = new HashMap<>();
     /**
      * 客户端与服务端会话连接成功
      */

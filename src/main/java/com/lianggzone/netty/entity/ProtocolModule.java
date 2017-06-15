@@ -19,50 +19,59 @@ public final class ProtocolModule {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+     * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
      */
     boolean hasCommHeader();
     /**
-     * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+     * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
      */
     com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader getCommHeader();
     /**
-     * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+     * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
      */
     com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeaderOrBuilder getCommHeaderOrBuilder();
 
     /**
-     * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+     * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
      */
     boolean hasLiveHeader();
     /**
-     * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+     * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
      */
     com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader getLiveHeader();
     /**
-     * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+     * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
      */
     com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeaderOrBuilder getLiveHeaderOrBuilder();
 
     /**
-     * <code>required .CommonProtocol.ActionData Action = 3;</code>
+     * <code>.CommonProtocol.ActionData Action = 3;</code>
      */
     boolean hasAction();
     /**
-     * <code>required .CommonProtocol.ActionData Action = 3;</code>
+     * <code>.CommonProtocol.ActionData Action = 3;</code>
      */
     com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData getAction();
     /**
-     * <code>required .CommonProtocol.ActionData Action = 3;</code>
+     * <code>.CommonProtocol.ActionData Action = 3;</code>
      */
     com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionDataOrBuilder getActionOrBuilder();
 
     /**
-     * <code>optional bytes Data = 4;</code>
+     * <code>.CommonProtocol.GroupData Group = 4;</code>
      */
-    boolean hasData();
+    boolean hasGroup();
     /**
-     * <code>optional bytes Data = 4;</code>
+     * <code>.CommonProtocol.GroupData Group = 4;</code>
+     */
+    com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData getGroup();
+    /**
+     * <code>.CommonProtocol.GroupData Group = 4;</code>
+     */
+    com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupDataOrBuilder getGroupOrBuilder();
+
+    /**
+     * <code>bytes Data = 5;</code>
      */
     com.google.protobuf.ByteString getData();
   }
@@ -88,7 +97,7 @@ public final class ProtocolModule {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private CommonProtocol(
         com.google.protobuf.CodedInputStream input,
@@ -96,8 +105,6 @@ public final class ProtocolModule {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -107,53 +114,65 @@ public final class ProtocolModule {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
               com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+              if (commHeader_ != null) {
                 subBuilder = commHeader_.toBuilder();
               }
-              commHeader_ = input.readMessage(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.PARSER, extensionRegistry);
+              commHeader_ = input.readMessage(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(commHeader_);
                 commHeader_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000001;
+
               break;
             }
             case 18: {
               com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              if (liveHeader_ != null) {
                 subBuilder = liveHeader_.toBuilder();
               }
-              liveHeader_ = input.readMessage(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.PARSER, extensionRegistry);
+              liveHeader_ = input.readMessage(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(liveHeader_);
                 liveHeader_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000002;
+
               break;
             }
             case 26: {
               com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              if (action_ != null) {
                 subBuilder = action_.toBuilder();
               }
-              action_ = input.readMessage(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.PARSER, extensionRegistry);
+              action_ = input.readMessage(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(action_);
                 action_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000004;
+
               break;
             }
             case 34: {
-              bitField0_ |= 0x00000008;
+              com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder subBuilder = null;
+              if (group_ != null) {
+                subBuilder = group_.toBuilder();
+              }
+              group_ = input.readMessage(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(group_);
+                group_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+
               data_ = input.readBytes();
               break;
             }
@@ -165,7 +184,6 @@ public final class ProtocolModule {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -186,42 +204,26 @@ public final class ProtocolModule {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required uint32 CommandId = 1;</code>
-       */
-      boolean hasCommandId();
-      /**
-       * <code>required uint32 CommandId = 1;</code>
+       * <code>uint32 CommandId = 1;</code>
        */
       int getCommandId();
 
       /**
-       * <code>required uint32 SeqId = 2;</code>
-       */
-      boolean hasSeqId();
-      /**
-       * <code>required uint32 SeqId = 2;</code>
+       * <code>uint32 SeqId = 2;</code>
        */
       int getSeqId();
 
       /**
-       * <code>required uint32 Version = 3;</code>
-       */
-      boolean hasVersion();
-      /**
-       * <code>required uint32 Version = 3;</code>
+       * <code>uint32 Version = 3;</code>
        */
       int getVersion();
 
       /**
-       * <code>optional string FromUid = 4;</code>
-       */
-      boolean hasFromUid();
-      /**
-       * <code>optional string FromUid = 4;</code>
+       * <code>string FromUid = 4;</code>
        */
       java.lang.String getFromUid();
       /**
-       * <code>optional string FromUid = 4;</code>
+       * <code>string FromUid = 4;</code>
        */
       com.google.protobuf.ByteString
           getFromUidBytes();
@@ -247,7 +249,7 @@ public final class ProtocolModule {
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
-        return this.unknownFields;
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
       }
       private CommonHeader(
           com.google.protobuf.CodedInputStream input,
@@ -255,8 +257,6 @@ public final class ProtocolModule {
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -266,31 +266,30 @@ public final class ProtocolModule {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
+                if (!input.skipField(tag)) {
                   done = true;
                 }
                 break;
               }
               case 8: {
-                bitField0_ |= 0x00000001;
+
                 commandId_ = input.readUInt32();
                 break;
               }
               case 16: {
-                bitField0_ |= 0x00000002;
+
                 seqId_ = input.readUInt32();
                 break;
               }
               case 24: {
-                bitField0_ |= 0x00000004;
+
                 version_ = input.readUInt32();
                 break;
               }
               case 34: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000008;
-                fromUid_ = bs;
+                java.lang.String s = input.readStringRequireUtf8();
+
+                fromUid_ = s;
                 break;
               }
             }
@@ -301,7 +300,6 @@ public final class ProtocolModule {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
@@ -317,17 +315,10 @@ public final class ProtocolModule {
                 com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.class, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.Builder.class);
       }
 
-      private int bitField0_;
       public static final int COMMANDID_FIELD_NUMBER = 1;
       private int commandId_;
       /**
-       * <code>required uint32 CommandId = 1;</code>
-       */
-      public boolean hasCommandId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required uint32 CommandId = 1;</code>
+       * <code>uint32 CommandId = 1;</code>
        */
       public int getCommandId() {
         return commandId_;
@@ -336,13 +327,7 @@ public final class ProtocolModule {
       public static final int SEQID_FIELD_NUMBER = 2;
       private int seqId_;
       /**
-       * <code>required uint32 SeqId = 2;</code>
-       */
-      public boolean hasSeqId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required uint32 SeqId = 2;</code>
+       * <code>uint32 SeqId = 2;</code>
        */
       public int getSeqId() {
         return seqId_;
@@ -351,13 +336,7 @@ public final class ProtocolModule {
       public static final int VERSION_FIELD_NUMBER = 3;
       private int version_;
       /**
-       * <code>required uint32 Version = 3;</code>
-       */
-      public boolean hasVersion() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required uint32 Version = 3;</code>
+       * <code>uint32 Version = 3;</code>
        */
       public int getVersion() {
         return version_;
@@ -366,13 +345,7 @@ public final class ProtocolModule {
       public static final int FROMUID_FIELD_NUMBER = 4;
       private volatile java.lang.Object fromUid_;
       /**
-       * <code>optional string FromUid = 4;</code>
-       */
-      public boolean hasFromUid() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string FromUid = 4;</code>
+       * <code>string FromUid = 4;</code>
        */
       public java.lang.String getFromUid() {
         java.lang.Object ref = fromUid_;
@@ -382,14 +355,12 @@ public final class ProtocolModule {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            fromUid_ = s;
-          }
+          fromUid_ = s;
           return s;
         }
       }
       /**
-       * <code>optional string FromUid = 4;</code>
+       * <code>string FromUid = 4;</code>
        */
       public com.google.protobuf.ByteString
           getFromUidBytes() {
@@ -411,37 +382,24 @@ public final class ProtocolModule {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasCommandId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasSeqId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasVersion()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
         memoizedIsInitialized = 1;
         return true;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (commandId_ != 0) {
           output.writeUInt32(1, commandId_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (seqId_ != 0) {
           output.writeUInt32(2, seqId_);
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (version_ != 0) {
           output.writeUInt32(3, version_);
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!getFromUidBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fromUid_);
         }
-        unknownFields.writeTo(output);
       }
 
       public int getSerializedSize() {
@@ -449,22 +407,21 @@ public final class ProtocolModule {
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (commandId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(1, commandId_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (seqId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(2, seqId_);
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (version_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(3, version_);
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!getFromUidBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fromUid_);
         }
-        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -481,27 +438,14 @@ public final class ProtocolModule {
         com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader other = (com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader) obj;
 
         boolean result = true;
-        result = result && (hasCommandId() == other.hasCommandId());
-        if (hasCommandId()) {
-          result = result && (getCommandId()
-              == other.getCommandId());
-        }
-        result = result && (hasSeqId() == other.hasSeqId());
-        if (hasSeqId()) {
-          result = result && (getSeqId()
-              == other.getSeqId());
-        }
-        result = result && (hasVersion() == other.hasVersion());
-        if (hasVersion()) {
-          result = result && (getVersion()
-              == other.getVersion());
-        }
-        result = result && (hasFromUid() == other.hasFromUid());
-        if (hasFromUid()) {
-          result = result && getFromUid()
-              .equals(other.getFromUid());
-        }
-        result = result && unknownFields.equals(other.unknownFields);
+        result = result && (getCommandId()
+            == other.getCommandId());
+        result = result && (getSeqId()
+            == other.getSeqId());
+        result = result && (getVersion()
+            == other.getVersion());
+        result = result && getFromUid()
+            .equals(other.getFromUid());
         return result;
       }
 
@@ -512,22 +456,14 @@ public final class ProtocolModule {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasCommandId()) {
-          hash = (37 * hash) + COMMANDID_FIELD_NUMBER;
-          hash = (53 * hash) + getCommandId();
-        }
-        if (hasSeqId()) {
-          hash = (37 * hash) + SEQID_FIELD_NUMBER;
-          hash = (53 * hash) + getSeqId();
-        }
-        if (hasVersion()) {
-          hash = (37 * hash) + VERSION_FIELD_NUMBER;
-          hash = (53 * hash) + getVersion();
-        }
-        if (hasFromUid()) {
-          hash = (37 * hash) + FROMUID_FIELD_NUMBER;
-          hash = (53 * hash) + getFromUid().hashCode();
-        }
+        hash = (37 * hash) + COMMANDID_FIELD_NUMBER;
+        hash = (53 * hash) + getCommandId();
+        hash = (37 * hash) + SEQID_FIELD_NUMBER;
+        hash = (53 * hash) + getSeqId();
+        hash = (37 * hash) + VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getVersion();
+        hash = (37 * hash) + FROMUID_FIELD_NUMBER;
+        hash = (53 * hash) + getFromUid().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -658,13 +594,13 @@ public final class ProtocolModule {
         public Builder clear() {
           super.clear();
           commandId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
+
           seqId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
+
           version_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
+
           fromUid_ = "";
-          bitField0_ = (bitField0_ & ~0x00000008);
+
           return this;
         }
 
@@ -687,25 +623,10 @@ public final class ProtocolModule {
 
         public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader buildPartial() {
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader result = new com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
           result.commandId_ = commandId_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
           result.seqId_ = seqId_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
           result.version_ = version_;
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
-          }
           result.fromUid_ = fromUid_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -747,35 +668,24 @@ public final class ProtocolModule {
 
         public Builder mergeFrom(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader other) {
           if (other == com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.getDefaultInstance()) return this;
-          if (other.hasCommandId()) {
+          if (other.getCommandId() != 0) {
             setCommandId(other.getCommandId());
           }
-          if (other.hasSeqId()) {
+          if (other.getSeqId() != 0) {
             setSeqId(other.getSeqId());
           }
-          if (other.hasVersion()) {
+          if (other.getVersion() != 0) {
             setVersion(other.getVersion());
           }
-          if (other.hasFromUid()) {
-            bitField0_ |= 0x00000008;
+          if (!other.getFromUid().isEmpty()) {
             fromUid_ = other.fromUid_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
 
         public final boolean isInitialized() {
-          if (!hasCommandId()) {
-            return false;
-          }
-          if (!hasSeqId()) {
-            return false;
-          }
-          if (!hasVersion()) {
-            return false;
-          }
           return true;
         }
 
@@ -796,35 +706,28 @@ public final class ProtocolModule {
           }
           return this;
         }
-        private int bitField0_;
 
         private int commandId_ ;
         /**
-         * <code>required uint32 CommandId = 1;</code>
-         */
-        public boolean hasCommandId() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required uint32 CommandId = 1;</code>
+         * <code>uint32 CommandId = 1;</code>
          */
         public int getCommandId() {
           return commandId_;
         }
         /**
-         * <code>required uint32 CommandId = 1;</code>
+         * <code>uint32 CommandId = 1;</code>
          */
         public Builder setCommandId(int value) {
-          bitField0_ |= 0x00000001;
+          
           commandId_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 CommandId = 1;</code>
+         * <code>uint32 CommandId = 1;</code>
          */
         public Builder clearCommandId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          
           commandId_ = 0;
           onChanged();
           return this;
@@ -832,31 +735,25 @@ public final class ProtocolModule {
 
         private int seqId_ ;
         /**
-         * <code>required uint32 SeqId = 2;</code>
-         */
-        public boolean hasSeqId() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>required uint32 SeqId = 2;</code>
+         * <code>uint32 SeqId = 2;</code>
          */
         public int getSeqId() {
           return seqId_;
         }
         /**
-         * <code>required uint32 SeqId = 2;</code>
+         * <code>uint32 SeqId = 2;</code>
          */
         public Builder setSeqId(int value) {
-          bitField0_ |= 0x00000002;
+          
           seqId_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 SeqId = 2;</code>
+         * <code>uint32 SeqId = 2;</code>
          */
         public Builder clearSeqId() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          
           seqId_ = 0;
           onChanged();
           return this;
@@ -864,31 +761,25 @@ public final class ProtocolModule {
 
         private int version_ ;
         /**
-         * <code>required uint32 Version = 3;</code>
-         */
-        public boolean hasVersion() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>required uint32 Version = 3;</code>
+         * <code>uint32 Version = 3;</code>
          */
         public int getVersion() {
           return version_;
         }
         /**
-         * <code>required uint32 Version = 3;</code>
+         * <code>uint32 Version = 3;</code>
          */
         public Builder setVersion(int value) {
-          bitField0_ |= 0x00000004;
+          
           version_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 Version = 3;</code>
+         * <code>uint32 Version = 3;</code>
          */
         public Builder clearVersion() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          
           version_ = 0;
           onChanged();
           return this;
@@ -896,13 +787,7 @@ public final class ProtocolModule {
 
         private java.lang.Object fromUid_ = "";
         /**
-         * <code>optional string FromUid = 4;</code>
-         */
-        public boolean hasFromUid() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        /**
-         * <code>optional string FromUid = 4;</code>
+         * <code>string FromUid = 4;</code>
          */
         public java.lang.String getFromUid() {
           java.lang.Object ref = fromUid_;
@@ -910,16 +795,14 @@ public final class ProtocolModule {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            if (bs.isValidUtf8()) {
-              fromUid_ = s;
-            }
+            fromUid_ = s;
             return s;
           } else {
             return (java.lang.String) ref;
           }
         }
         /**
-         * <code>optional string FromUid = 4;</code>
+         * <code>string FromUid = 4;</code>
          */
         public com.google.protobuf.ByteString
             getFromUidBytes() {
@@ -935,48 +818,49 @@ public final class ProtocolModule {
           }
         }
         /**
-         * <code>optional string FromUid = 4;</code>
+         * <code>string FromUid = 4;</code>
          */
         public Builder setFromUid(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
           fromUid_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional string FromUid = 4;</code>
+         * <code>string FromUid = 4;</code>
          */
         public Builder clearFromUid() {
-          bitField0_ = (bitField0_ & ~0x00000008);
+          
           fromUid_ = getDefaultInstance().getFromUid();
           onChanged();
           return this;
         }
         /**
-         * <code>optional string FromUid = 4;</code>
+         * <code>string FromUid = 4;</code>
          */
         public Builder setFromUidBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+          
           fromUid_ = value;
           onChanged();
           return this;
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
+          return this;
         }
 
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
+          return this;
         }
 
 
@@ -993,7 +877,7 @@ public final class ProtocolModule {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<CommonHeader>
+      private static final com.google.protobuf.Parser<CommonHeader>
           PARSER = new com.google.protobuf.AbstractParser<CommonHeader>() {
         public CommonHeader parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -1023,56 +907,32 @@ public final class ProtocolModule {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required uint32 LiveType = 1;</code>
-       */
-      boolean hasLiveType();
-      /**
-       * <code>required uint32 LiveType = 1;</code>
+       * <code>uint32 LiveType = 1;</code>
        */
       int getLiveType();
 
       /**
-       * <code>required uint32 LiveId = 2;</code>
-       */
-      boolean hasLiveId();
-      /**
-       * <code>required uint32 LiveId = 2;</code>
+       * <code>uint32 LiveId = 2;</code>
        */
       int getLiveId();
 
       /**
-       * <code>required uint32 DemandType = 3;</code>
-       */
-      boolean hasDemandType();
-      /**
-       * <code>required uint32 DemandType = 3;</code>
+       * <code>uint32 DemandType = 3;</code>
        */
       int getDemandType();
 
       /**
-       * <code>required uint32 DemandId = 4;</code>
-       */
-      boolean hasDemandId();
-      /**
-       * <code>required uint32 DemandId = 4;</code>
+       * <code>uint32 DemandId = 4;</code>
        */
       int getDemandId();
 
       /**
-       * <code>optional uint32 ToDemandId = 5;</code>
-       */
-      boolean hasToDemandId();
-      /**
-       * <code>optional uint32 ToDemandId = 5;</code>
+       * <code>uint32 ToDemandId = 5;</code>
        */
       int getToDemandId();
 
       /**
-       * <code>optional uint32 ToDemandType = 6;</code>
-       */
-      boolean hasToDemandType();
-      /**
-       * <code>optional uint32 ToDemandType = 6;</code>
+       * <code>uint32 ToDemandType = 6;</code>
        */
       int getToDemandType();
     }
@@ -1099,7 +959,7 @@ public final class ProtocolModule {
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
-        return this.unknownFields;
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
       }
       private LiveCommonHeader(
           com.google.protobuf.CodedInputStream input,
@@ -1107,8 +967,6 @@ public final class ProtocolModule {
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -1118,39 +976,38 @@ public final class ProtocolModule {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
+                if (!input.skipField(tag)) {
                   done = true;
                 }
                 break;
               }
               case 8: {
-                bitField0_ |= 0x00000001;
+
                 liveType_ = input.readUInt32();
                 break;
               }
               case 16: {
-                bitField0_ |= 0x00000002;
+
                 liveId_ = input.readUInt32();
                 break;
               }
               case 24: {
-                bitField0_ |= 0x00000004;
+
                 demandType_ = input.readUInt32();
                 break;
               }
               case 32: {
-                bitField0_ |= 0x00000008;
+
                 demandId_ = input.readUInt32();
                 break;
               }
               case 40: {
-                bitField0_ |= 0x00000010;
+
                 toDemandId_ = input.readUInt32();
                 break;
               }
               case 48: {
-                bitField0_ |= 0x00000020;
+
                 toDemandType_ = input.readUInt32();
                 break;
               }
@@ -1162,7 +1019,6 @@ public final class ProtocolModule {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
@@ -1178,17 +1034,10 @@ public final class ProtocolModule {
                 com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.class, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.Builder.class);
       }
 
-      private int bitField0_;
       public static final int LIVETYPE_FIELD_NUMBER = 1;
       private int liveType_;
       /**
-       * <code>required uint32 LiveType = 1;</code>
-       */
-      public boolean hasLiveType() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required uint32 LiveType = 1;</code>
+       * <code>uint32 LiveType = 1;</code>
        */
       public int getLiveType() {
         return liveType_;
@@ -1197,13 +1046,7 @@ public final class ProtocolModule {
       public static final int LIVEID_FIELD_NUMBER = 2;
       private int liveId_;
       /**
-       * <code>required uint32 LiveId = 2;</code>
-       */
-      public boolean hasLiveId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required uint32 LiveId = 2;</code>
+       * <code>uint32 LiveId = 2;</code>
        */
       public int getLiveId() {
         return liveId_;
@@ -1212,13 +1055,7 @@ public final class ProtocolModule {
       public static final int DEMANDTYPE_FIELD_NUMBER = 3;
       private int demandType_;
       /**
-       * <code>required uint32 DemandType = 3;</code>
-       */
-      public boolean hasDemandType() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required uint32 DemandType = 3;</code>
+       * <code>uint32 DemandType = 3;</code>
        */
       public int getDemandType() {
         return demandType_;
@@ -1227,13 +1064,7 @@ public final class ProtocolModule {
       public static final int DEMANDID_FIELD_NUMBER = 4;
       private int demandId_;
       /**
-       * <code>required uint32 DemandId = 4;</code>
-       */
-      public boolean hasDemandId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>required uint32 DemandId = 4;</code>
+       * <code>uint32 DemandId = 4;</code>
        */
       public int getDemandId() {
         return demandId_;
@@ -1242,13 +1073,7 @@ public final class ProtocolModule {
       public static final int TODEMANDID_FIELD_NUMBER = 5;
       private int toDemandId_;
       /**
-       * <code>optional uint32 ToDemandId = 5;</code>
-       */
-      public boolean hasToDemandId() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional uint32 ToDemandId = 5;</code>
+       * <code>uint32 ToDemandId = 5;</code>
        */
       public int getToDemandId() {
         return toDemandId_;
@@ -1257,13 +1082,7 @@ public final class ProtocolModule {
       public static final int TODEMANDTYPE_FIELD_NUMBER = 6;
       private int toDemandType_;
       /**
-       * <code>optional uint32 ToDemandType = 6;</code>
-       */
-      public boolean hasToDemandType() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional uint32 ToDemandType = 6;</code>
+       * <code>uint32 ToDemandType = 6;</code>
        */
       public int getToDemandType() {
         return toDemandType_;
@@ -1275,47 +1094,30 @@ public final class ProtocolModule {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasLiveType()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasLiveId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasDemandType()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasDemandId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
         memoizedIsInitialized = 1;
         return true;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (liveType_ != 0) {
           output.writeUInt32(1, liveType_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (liveId_ != 0) {
           output.writeUInt32(2, liveId_);
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (demandType_ != 0) {
           output.writeUInt32(3, demandType_);
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (demandId_ != 0) {
           output.writeUInt32(4, demandId_);
         }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (toDemandId_ != 0) {
           output.writeUInt32(5, toDemandId_);
         }
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (toDemandType_ != 0) {
           output.writeUInt32(6, toDemandType_);
         }
-        unknownFields.writeTo(output);
       }
 
       public int getSerializedSize() {
@@ -1323,31 +1125,30 @@ public final class ProtocolModule {
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (liveType_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(1, liveType_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (liveId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(2, liveId_);
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (demandType_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(3, demandType_);
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (demandId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(4, demandId_);
         }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (toDemandId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(5, toDemandId_);
         }
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (toDemandType_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(6, toDemandType_);
         }
-        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1364,37 +1165,18 @@ public final class ProtocolModule {
         com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader other = (com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader) obj;
 
         boolean result = true;
-        result = result && (hasLiveType() == other.hasLiveType());
-        if (hasLiveType()) {
-          result = result && (getLiveType()
-              == other.getLiveType());
-        }
-        result = result && (hasLiveId() == other.hasLiveId());
-        if (hasLiveId()) {
-          result = result && (getLiveId()
-              == other.getLiveId());
-        }
-        result = result && (hasDemandType() == other.hasDemandType());
-        if (hasDemandType()) {
-          result = result && (getDemandType()
-              == other.getDemandType());
-        }
-        result = result && (hasDemandId() == other.hasDemandId());
-        if (hasDemandId()) {
-          result = result && (getDemandId()
-              == other.getDemandId());
-        }
-        result = result && (hasToDemandId() == other.hasToDemandId());
-        if (hasToDemandId()) {
-          result = result && (getToDemandId()
-              == other.getToDemandId());
-        }
-        result = result && (hasToDemandType() == other.hasToDemandType());
-        if (hasToDemandType()) {
-          result = result && (getToDemandType()
-              == other.getToDemandType());
-        }
-        result = result && unknownFields.equals(other.unknownFields);
+        result = result && (getLiveType()
+            == other.getLiveType());
+        result = result && (getLiveId()
+            == other.getLiveId());
+        result = result && (getDemandType()
+            == other.getDemandType());
+        result = result && (getDemandId()
+            == other.getDemandId());
+        result = result && (getToDemandId()
+            == other.getToDemandId());
+        result = result && (getToDemandType()
+            == other.getToDemandType());
         return result;
       }
 
@@ -1405,30 +1187,18 @@ public final class ProtocolModule {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasLiveType()) {
-          hash = (37 * hash) + LIVETYPE_FIELD_NUMBER;
-          hash = (53 * hash) + getLiveType();
-        }
-        if (hasLiveId()) {
-          hash = (37 * hash) + LIVEID_FIELD_NUMBER;
-          hash = (53 * hash) + getLiveId();
-        }
-        if (hasDemandType()) {
-          hash = (37 * hash) + DEMANDTYPE_FIELD_NUMBER;
-          hash = (53 * hash) + getDemandType();
-        }
-        if (hasDemandId()) {
-          hash = (37 * hash) + DEMANDID_FIELD_NUMBER;
-          hash = (53 * hash) + getDemandId();
-        }
-        if (hasToDemandId()) {
-          hash = (37 * hash) + TODEMANDID_FIELD_NUMBER;
-          hash = (53 * hash) + getToDemandId();
-        }
-        if (hasToDemandType()) {
-          hash = (37 * hash) + TODEMANDTYPE_FIELD_NUMBER;
-          hash = (53 * hash) + getToDemandType();
-        }
+        hash = (37 * hash) + LIVETYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getLiveType();
+        hash = (37 * hash) + LIVEID_FIELD_NUMBER;
+        hash = (53 * hash) + getLiveId();
+        hash = (37 * hash) + DEMANDTYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getDemandType();
+        hash = (37 * hash) + DEMANDID_FIELD_NUMBER;
+        hash = (53 * hash) + getDemandId();
+        hash = (37 * hash) + TODEMANDID_FIELD_NUMBER;
+        hash = (53 * hash) + getToDemandId();
+        hash = (37 * hash) + TODEMANDTYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getToDemandType();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1559,17 +1329,17 @@ public final class ProtocolModule {
         public Builder clear() {
           super.clear();
           liveType_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
+
           liveId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
+
           demandType_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
+
           demandId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000008);
+
           toDemandId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000010);
+
           toDemandType_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000020);
+
           return this;
         }
 
@@ -1592,33 +1362,12 @@ public final class ProtocolModule {
 
         public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader buildPartial() {
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader result = new com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
           result.liveType_ = liveType_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
           result.liveId_ = liveId_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
           result.demandType_ = demandType_;
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
-          }
           result.demandId_ = demandId_;
-          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-            to_bitField0_ |= 0x00000010;
-          }
           result.toDemandId_ = toDemandId_;
-          if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-            to_bitField0_ |= 0x00000020;
-          }
           result.toDemandType_ = toDemandType_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -1660,42 +1409,29 @@ public final class ProtocolModule {
 
         public Builder mergeFrom(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader other) {
           if (other == com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.getDefaultInstance()) return this;
-          if (other.hasLiveType()) {
+          if (other.getLiveType() != 0) {
             setLiveType(other.getLiveType());
           }
-          if (other.hasLiveId()) {
+          if (other.getLiveId() != 0) {
             setLiveId(other.getLiveId());
           }
-          if (other.hasDemandType()) {
+          if (other.getDemandType() != 0) {
             setDemandType(other.getDemandType());
           }
-          if (other.hasDemandId()) {
+          if (other.getDemandId() != 0) {
             setDemandId(other.getDemandId());
           }
-          if (other.hasToDemandId()) {
+          if (other.getToDemandId() != 0) {
             setToDemandId(other.getToDemandId());
           }
-          if (other.hasToDemandType()) {
+          if (other.getToDemandType() != 0) {
             setToDemandType(other.getToDemandType());
           }
-          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
 
         public final boolean isInitialized() {
-          if (!hasLiveType()) {
-            return false;
-          }
-          if (!hasLiveId()) {
-            return false;
-          }
-          if (!hasDemandType()) {
-            return false;
-          }
-          if (!hasDemandId()) {
-            return false;
-          }
           return true;
         }
 
@@ -1716,35 +1452,28 @@ public final class ProtocolModule {
           }
           return this;
         }
-        private int bitField0_;
 
         private int liveType_ ;
         /**
-         * <code>required uint32 LiveType = 1;</code>
-         */
-        public boolean hasLiveType() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required uint32 LiveType = 1;</code>
+         * <code>uint32 LiveType = 1;</code>
          */
         public int getLiveType() {
           return liveType_;
         }
         /**
-         * <code>required uint32 LiveType = 1;</code>
+         * <code>uint32 LiveType = 1;</code>
          */
         public Builder setLiveType(int value) {
-          bitField0_ |= 0x00000001;
+          
           liveType_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 LiveType = 1;</code>
+         * <code>uint32 LiveType = 1;</code>
          */
         public Builder clearLiveType() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          
           liveType_ = 0;
           onChanged();
           return this;
@@ -1752,31 +1481,25 @@ public final class ProtocolModule {
 
         private int liveId_ ;
         /**
-         * <code>required uint32 LiveId = 2;</code>
-         */
-        public boolean hasLiveId() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>required uint32 LiveId = 2;</code>
+         * <code>uint32 LiveId = 2;</code>
          */
         public int getLiveId() {
           return liveId_;
         }
         /**
-         * <code>required uint32 LiveId = 2;</code>
+         * <code>uint32 LiveId = 2;</code>
          */
         public Builder setLiveId(int value) {
-          bitField0_ |= 0x00000002;
+          
           liveId_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 LiveId = 2;</code>
+         * <code>uint32 LiveId = 2;</code>
          */
         public Builder clearLiveId() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          
           liveId_ = 0;
           onChanged();
           return this;
@@ -1784,31 +1507,25 @@ public final class ProtocolModule {
 
         private int demandType_ ;
         /**
-         * <code>required uint32 DemandType = 3;</code>
-         */
-        public boolean hasDemandType() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>required uint32 DemandType = 3;</code>
+         * <code>uint32 DemandType = 3;</code>
          */
         public int getDemandType() {
           return demandType_;
         }
         /**
-         * <code>required uint32 DemandType = 3;</code>
+         * <code>uint32 DemandType = 3;</code>
          */
         public Builder setDemandType(int value) {
-          bitField0_ |= 0x00000004;
+          
           demandType_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 DemandType = 3;</code>
+         * <code>uint32 DemandType = 3;</code>
          */
         public Builder clearDemandType() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          
           demandType_ = 0;
           onChanged();
           return this;
@@ -1816,31 +1533,25 @@ public final class ProtocolModule {
 
         private int demandId_ ;
         /**
-         * <code>required uint32 DemandId = 4;</code>
-         */
-        public boolean hasDemandId() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        /**
-         * <code>required uint32 DemandId = 4;</code>
+         * <code>uint32 DemandId = 4;</code>
          */
         public int getDemandId() {
           return demandId_;
         }
         /**
-         * <code>required uint32 DemandId = 4;</code>
+         * <code>uint32 DemandId = 4;</code>
          */
         public Builder setDemandId(int value) {
-          bitField0_ |= 0x00000008;
+          
           demandId_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 DemandId = 4;</code>
+         * <code>uint32 DemandId = 4;</code>
          */
         public Builder clearDemandId() {
-          bitField0_ = (bitField0_ & ~0x00000008);
+          
           demandId_ = 0;
           onChanged();
           return this;
@@ -1848,31 +1559,25 @@ public final class ProtocolModule {
 
         private int toDemandId_ ;
         /**
-         * <code>optional uint32 ToDemandId = 5;</code>
-         */
-        public boolean hasToDemandId() {
-          return ((bitField0_ & 0x00000010) == 0x00000010);
-        }
-        /**
-         * <code>optional uint32 ToDemandId = 5;</code>
+         * <code>uint32 ToDemandId = 5;</code>
          */
         public int getToDemandId() {
           return toDemandId_;
         }
         /**
-         * <code>optional uint32 ToDemandId = 5;</code>
+         * <code>uint32 ToDemandId = 5;</code>
          */
         public Builder setToDemandId(int value) {
-          bitField0_ |= 0x00000010;
+          
           toDemandId_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 ToDemandId = 5;</code>
+         * <code>uint32 ToDemandId = 5;</code>
          */
         public Builder clearToDemandId() {
-          bitField0_ = (bitField0_ & ~0x00000010);
+          
           toDemandId_ = 0;
           onChanged();
           return this;
@@ -1880,43 +1585,37 @@ public final class ProtocolModule {
 
         private int toDemandType_ ;
         /**
-         * <code>optional uint32 ToDemandType = 6;</code>
-         */
-        public boolean hasToDemandType() {
-          return ((bitField0_ & 0x00000020) == 0x00000020);
-        }
-        /**
-         * <code>optional uint32 ToDemandType = 6;</code>
+         * <code>uint32 ToDemandType = 6;</code>
          */
         public int getToDemandType() {
           return toDemandType_;
         }
         /**
-         * <code>optional uint32 ToDemandType = 6;</code>
+         * <code>uint32 ToDemandType = 6;</code>
          */
         public Builder setToDemandType(int value) {
-          bitField0_ |= 0x00000020;
+          
           toDemandType_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 ToDemandType = 6;</code>
+         * <code>uint32 ToDemandType = 6;</code>
          */
         public Builder clearToDemandType() {
-          bitField0_ = (bitField0_ & ~0x00000020);
+          
           toDemandType_ = 0;
           onChanged();
           return this;
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
+          return this;
         }
 
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
+          return this;
         }
 
 
@@ -1933,7 +1632,7 @@ public final class ProtocolModule {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<LiveCommonHeader>
+      private static final com.google.protobuf.Parser<LiveCommonHeader>
           PARSER = new com.google.protobuf.AbstractParser<LiveCommonHeader>() {
         public LiveCommonHeader parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -1963,42 +1662,26 @@ public final class ProtocolModule {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required uint32 Type = 1;</code>
-       */
-      boolean hasType();
-      /**
-       * <code>required uint32 Type = 1;</code>
+       * <code>uint32 Type = 1;</code>
        */
       int getType();
 
       /**
-       * <code>required uint32 Area = 2;</code>
-       */
-      boolean hasArea();
-      /**
-       * <code>required uint32 Area = 2;</code>
+       * <code>uint32 Area = 2;</code>
        */
       int getArea();
 
       /**
-       * <code>required uint32 Command = 3;</code>
-       */
-      boolean hasCommand();
-      /**
-       * <code>required uint32 Command = 3;</code>
+       * <code>uint32 Command = 3;</code>
        */
       int getCommand();
 
       /**
-       * <code>optional string Message = 4;</code>
-       */
-      boolean hasMessage();
-      /**
-       * <code>optional string Message = 4;</code>
+       * <code>string Message = 4;</code>
        */
       java.lang.String getMessage();
       /**
-       * <code>optional string Message = 4;</code>
+       * <code>string Message = 4;</code>
        */
       com.google.protobuf.ByteString
           getMessageBytes();
@@ -2024,7 +1707,7 @@ public final class ProtocolModule {
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
-        return this.unknownFields;
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
       }
       private ActionData(
           com.google.protobuf.CodedInputStream input,
@@ -2032,8 +1715,6 @@ public final class ProtocolModule {
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -2043,31 +1724,30 @@ public final class ProtocolModule {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
+                if (!input.skipField(tag)) {
                   done = true;
                 }
                 break;
               }
               case 8: {
-                bitField0_ |= 0x00000001;
+
                 type_ = input.readUInt32();
                 break;
               }
               case 16: {
-                bitField0_ |= 0x00000002;
+
                 area_ = input.readUInt32();
                 break;
               }
               case 24: {
-                bitField0_ |= 0x00000004;
+
                 command_ = input.readUInt32();
                 break;
               }
               case 34: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000008;
-                message_ = bs;
+                java.lang.String s = input.readStringRequireUtf8();
+
+                message_ = s;
                 break;
               }
             }
@@ -2078,7 +1758,6 @@ public final class ProtocolModule {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
@@ -2094,17 +1773,10 @@ public final class ProtocolModule {
                 com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.class, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.Builder.class);
       }
 
-      private int bitField0_;
       public static final int TYPE_FIELD_NUMBER = 1;
       private int type_;
       /**
-       * <code>required uint32 Type = 1;</code>
-       */
-      public boolean hasType() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required uint32 Type = 1;</code>
+       * <code>uint32 Type = 1;</code>
        */
       public int getType() {
         return type_;
@@ -2113,13 +1785,7 @@ public final class ProtocolModule {
       public static final int AREA_FIELD_NUMBER = 2;
       private int area_;
       /**
-       * <code>required uint32 Area = 2;</code>
-       */
-      public boolean hasArea() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required uint32 Area = 2;</code>
+       * <code>uint32 Area = 2;</code>
        */
       public int getArea() {
         return area_;
@@ -2128,13 +1794,7 @@ public final class ProtocolModule {
       public static final int COMMAND_FIELD_NUMBER = 3;
       private int command_;
       /**
-       * <code>required uint32 Command = 3;</code>
-       */
-      public boolean hasCommand() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required uint32 Command = 3;</code>
+       * <code>uint32 Command = 3;</code>
        */
       public int getCommand() {
         return command_;
@@ -2143,13 +1803,7 @@ public final class ProtocolModule {
       public static final int MESSAGE_FIELD_NUMBER = 4;
       private volatile java.lang.Object message_;
       /**
-       * <code>optional string Message = 4;</code>
-       */
-      public boolean hasMessage() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string Message = 4;</code>
+       * <code>string Message = 4;</code>
        */
       public java.lang.String getMessage() {
         java.lang.Object ref = message_;
@@ -2159,14 +1813,12 @@ public final class ProtocolModule {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            message_ = s;
-          }
+          message_ = s;
           return s;
         }
       }
       /**
-       * <code>optional string Message = 4;</code>
+       * <code>string Message = 4;</code>
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
@@ -2188,37 +1840,24 @@ public final class ProtocolModule {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasType()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasArea()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasCommand()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
         memoizedIsInitialized = 1;
         return true;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (type_ != 0) {
           output.writeUInt32(1, type_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (area_ != 0) {
           output.writeUInt32(2, area_);
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (command_ != 0) {
           output.writeUInt32(3, command_);
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!getMessageBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
         }
-        unknownFields.writeTo(output);
       }
 
       public int getSerializedSize() {
@@ -2226,22 +1865,21 @@ public final class ProtocolModule {
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (type_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(1, type_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (area_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(2, area_);
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (command_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(3, command_);
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!getMessageBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
         }
-        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2258,27 +1896,14 @@ public final class ProtocolModule {
         com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData other = (com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData) obj;
 
         boolean result = true;
-        result = result && (hasType() == other.hasType());
-        if (hasType()) {
-          result = result && (getType()
-              == other.getType());
-        }
-        result = result && (hasArea() == other.hasArea());
-        if (hasArea()) {
-          result = result && (getArea()
-              == other.getArea());
-        }
-        result = result && (hasCommand() == other.hasCommand());
-        if (hasCommand()) {
-          result = result && (getCommand()
-              == other.getCommand());
-        }
-        result = result && (hasMessage() == other.hasMessage());
-        if (hasMessage()) {
-          result = result && getMessage()
-              .equals(other.getMessage());
-        }
-        result = result && unknownFields.equals(other.unknownFields);
+        result = result && (getType()
+            == other.getType());
+        result = result && (getArea()
+            == other.getArea());
+        result = result && (getCommand()
+            == other.getCommand());
+        result = result && getMessage()
+            .equals(other.getMessage());
         return result;
       }
 
@@ -2289,22 +1914,14 @@ public final class ProtocolModule {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasType()) {
-          hash = (37 * hash) + TYPE_FIELD_NUMBER;
-          hash = (53 * hash) + getType();
-        }
-        if (hasArea()) {
-          hash = (37 * hash) + AREA_FIELD_NUMBER;
-          hash = (53 * hash) + getArea();
-        }
-        if (hasCommand()) {
-          hash = (37 * hash) + COMMAND_FIELD_NUMBER;
-          hash = (53 * hash) + getCommand();
-        }
-        if (hasMessage()) {
-          hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-          hash = (53 * hash) + getMessage().hashCode();
-        }
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType();
+        hash = (37 * hash) + AREA_FIELD_NUMBER;
+        hash = (53 * hash) + getArea();
+        hash = (37 * hash) + COMMAND_FIELD_NUMBER;
+        hash = (53 * hash) + getCommand();
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessage().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2435,13 +2052,13 @@ public final class ProtocolModule {
         public Builder clear() {
           super.clear();
           type_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
+
           area_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
+
           command_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
+
           message_ = "";
-          bitField0_ = (bitField0_ & ~0x00000008);
+
           return this;
         }
 
@@ -2464,25 +2081,10 @@ public final class ProtocolModule {
 
         public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData buildPartial() {
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData result = new com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
           result.type_ = type_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
           result.area_ = area_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
           result.command_ = command_;
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
-          }
           result.message_ = message_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -2524,35 +2126,24 @@ public final class ProtocolModule {
 
         public Builder mergeFrom(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData other) {
           if (other == com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.getDefaultInstance()) return this;
-          if (other.hasType()) {
+          if (other.getType() != 0) {
             setType(other.getType());
           }
-          if (other.hasArea()) {
+          if (other.getArea() != 0) {
             setArea(other.getArea());
           }
-          if (other.hasCommand()) {
+          if (other.getCommand() != 0) {
             setCommand(other.getCommand());
           }
-          if (other.hasMessage()) {
-            bitField0_ |= 0x00000008;
+          if (!other.getMessage().isEmpty()) {
             message_ = other.message_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
 
         public final boolean isInitialized() {
-          if (!hasType()) {
-            return false;
-          }
-          if (!hasArea()) {
-            return false;
-          }
-          if (!hasCommand()) {
-            return false;
-          }
           return true;
         }
 
@@ -2573,35 +2164,28 @@ public final class ProtocolModule {
           }
           return this;
         }
-        private int bitField0_;
 
         private int type_ ;
         /**
-         * <code>required uint32 Type = 1;</code>
-         */
-        public boolean hasType() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required uint32 Type = 1;</code>
+         * <code>uint32 Type = 1;</code>
          */
         public int getType() {
           return type_;
         }
         /**
-         * <code>required uint32 Type = 1;</code>
+         * <code>uint32 Type = 1;</code>
          */
         public Builder setType(int value) {
-          bitField0_ |= 0x00000001;
+          
           type_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 Type = 1;</code>
+         * <code>uint32 Type = 1;</code>
          */
         public Builder clearType() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          
           type_ = 0;
           onChanged();
           return this;
@@ -2609,31 +2193,25 @@ public final class ProtocolModule {
 
         private int area_ ;
         /**
-         * <code>required uint32 Area = 2;</code>
-         */
-        public boolean hasArea() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>required uint32 Area = 2;</code>
+         * <code>uint32 Area = 2;</code>
          */
         public int getArea() {
           return area_;
         }
         /**
-         * <code>required uint32 Area = 2;</code>
+         * <code>uint32 Area = 2;</code>
          */
         public Builder setArea(int value) {
-          bitField0_ |= 0x00000002;
+          
           area_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 Area = 2;</code>
+         * <code>uint32 Area = 2;</code>
          */
         public Builder clearArea() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          
           area_ = 0;
           onChanged();
           return this;
@@ -2641,31 +2219,25 @@ public final class ProtocolModule {
 
         private int command_ ;
         /**
-         * <code>required uint32 Command = 3;</code>
-         */
-        public boolean hasCommand() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>required uint32 Command = 3;</code>
+         * <code>uint32 Command = 3;</code>
          */
         public int getCommand() {
           return command_;
         }
         /**
-         * <code>required uint32 Command = 3;</code>
+         * <code>uint32 Command = 3;</code>
          */
         public Builder setCommand(int value) {
-          bitField0_ |= 0x00000004;
+          
           command_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 Command = 3;</code>
+         * <code>uint32 Command = 3;</code>
          */
         public Builder clearCommand() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          
           command_ = 0;
           onChanged();
           return this;
@@ -2673,13 +2245,7 @@ public final class ProtocolModule {
 
         private java.lang.Object message_ = "";
         /**
-         * <code>optional string Message = 4;</code>
-         */
-        public boolean hasMessage() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        /**
-         * <code>optional string Message = 4;</code>
+         * <code>string Message = 4;</code>
          */
         public java.lang.String getMessage() {
           java.lang.Object ref = message_;
@@ -2687,16 +2253,14 @@ public final class ProtocolModule {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            if (bs.isValidUtf8()) {
-              message_ = s;
-            }
+            message_ = s;
             return s;
           } else {
             return (java.lang.String) ref;
           }
         }
         /**
-         * <code>optional string Message = 4;</code>
+         * <code>string Message = 4;</code>
          */
         public com.google.protobuf.ByteString
             getMessageBytes() {
@@ -2712,48 +2276,49 @@ public final class ProtocolModule {
           }
         }
         /**
-         * <code>optional string Message = 4;</code>
+         * <code>string Message = 4;</code>
          */
         public Builder setMessage(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
           message_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional string Message = 4;</code>
+         * <code>string Message = 4;</code>
          */
         public Builder clearMessage() {
-          bitField0_ = (bitField0_ & ~0x00000008);
+          
           message_ = getDefaultInstance().getMessage();
           onChanged();
           return this;
         }
         /**
-         * <code>optional string Message = 4;</code>
+         * <code>string Message = 4;</code>
          */
         public Builder setMessageBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+          
           message_ = value;
           onChanged();
           return this;
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
+          return this;
         }
 
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
+          return this;
         }
 
 
@@ -2770,7 +2335,7 @@ public final class ProtocolModule {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionData>
+      private static final com.google.protobuf.Parser<ActionData>
           PARSER = new com.google.protobuf.AbstractParser<ActionData>() {
         public ActionData parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -2795,80 +2360,597 @@ public final class ProtocolModule {
 
     }
 
-    private int bitField0_;
+    public interface GroupDataOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:CommonProtocol.GroupData)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>uint32 Id = 1;</code>
+       */
+      int getId();
+
+      /**
+       * <code>uint32 Command = 2;</code>
+       */
+      int getCommand();
+    }
+    /**
+     * Protobuf type {@code CommonProtocol.GroupData}
+     */
+    public  static final class GroupData extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:CommonProtocol.GroupData)
+        GroupDataOrBuilder {
+      // Use GroupData.newBuilder() to construct.
+      private GroupData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private GroupData() {
+        id_ = 0;
+        command_ = 0;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private GroupData(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+
+                id_ = input.readUInt32();
+                break;
+              }
+              case 16: {
+
+                command_ = input.readUInt32();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.lianggzone.netty.entity.ProtocolModule.internal_static_CommonProtocol_GroupData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.lianggzone.netty.entity.ProtocolModule.internal_static_CommonProtocol_GroupData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.class, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder.class);
+      }
+
+      public static final int ID_FIELD_NUMBER = 1;
+      private int id_;
+      /**
+       * <code>uint32 Id = 1;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+
+      public static final int COMMAND_FIELD_NUMBER = 2;
+      private int command_;
+      /**
+       * <code>uint32 Command = 2;</code>
+       */
+      public int getCommand() {
+        return command_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (id_ != 0) {
+          output.writeUInt32(1, id_);
+        }
+        if (command_ != 0) {
+          output.writeUInt32(2, command_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (id_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(1, id_);
+        }
+        if (command_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(2, command_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData)) {
+          return super.equals(obj);
+        }
+        com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData other = (com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData) obj;
+
+        boolean result = true;
+        result = result && (getId()
+            == other.getId());
+        result = result && (getCommand()
+            == other.getCommand());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+        hash = (37 * hash) + COMMAND_FIELD_NUMBER;
+        hash = (53 * hash) + getCommand();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code CommonProtocol.GroupData}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:CommonProtocol.GroupData)
+          com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupDataOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.lianggzone.netty.entity.ProtocolModule.internal_static_CommonProtocol_GroupData_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.lianggzone.netty.entity.ProtocolModule.internal_static_CommonProtocol_GroupData_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.class, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder.class);
+        }
+
+        // Construct using com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          id_ = 0;
+
+          command_ = 0;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.lianggzone.netty.entity.ProtocolModule.internal_static_CommonProtocol_GroupData_descriptor;
+        }
+
+        public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData getDefaultInstanceForType() {
+          return com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.getDefaultInstance();
+        }
+
+        public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData build() {
+          com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData buildPartial() {
+          com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData result = new com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData(this);
+          result.id_ = id_;
+          result.command_ = command_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData) {
+            return mergeFrom((com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData other) {
+          if (other == com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.getDefaultInstance()) return this;
+          if (other.getId() != 0) {
+            setId(other.getId());
+          }
+          if (other.getCommand() != 0) {
+            setCommand(other.getCommand());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int id_ ;
+        /**
+         * <code>uint32 Id = 1;</code>
+         */
+        public int getId() {
+          return id_;
+        }
+        /**
+         * <code>uint32 Id = 1;</code>
+         */
+        public Builder setId(int value) {
+          
+          id_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 Id = 1;</code>
+         */
+        public Builder clearId() {
+          
+          id_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int command_ ;
+        /**
+         * <code>uint32 Command = 2;</code>
+         */
+        public int getCommand() {
+          return command_;
+        }
+        /**
+         * <code>uint32 Command = 2;</code>
+         */
+        public Builder setCommand(int value) {
+          
+          command_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 Command = 2;</code>
+         */
+        public Builder clearCommand() {
+          
+          command_ = 0;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:CommonProtocol.GroupData)
+      }
+
+      // @@protoc_insertion_point(class_scope:CommonProtocol.GroupData)
+      private static final com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData();
+      }
+
+      public static com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<GroupData>
+          PARSER = new com.google.protobuf.AbstractParser<GroupData>() {
+        public GroupData parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new GroupData(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<GroupData> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GroupData> getParserForType() {
+        return PARSER;
+      }
+
+      public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     public static final int COMMHEADER_FIELD_NUMBER = 1;
     private com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader commHeader_;
     /**
-     * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+     * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
      */
     public boolean hasCommHeader() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return commHeader_ != null;
     }
     /**
-     * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+     * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
      */
     public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader getCommHeader() {
       return commHeader_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.getDefaultInstance() : commHeader_;
     }
     /**
-     * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+     * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
      */
     public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeaderOrBuilder getCommHeaderOrBuilder() {
-      return commHeader_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.getDefaultInstance() : commHeader_;
+      return getCommHeader();
     }
 
     public static final int LIVEHEADER_FIELD_NUMBER = 2;
     private com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader liveHeader_;
     /**
-     * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+     * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
      */
     public boolean hasLiveHeader() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return liveHeader_ != null;
     }
     /**
-     * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+     * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
      */
     public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader getLiveHeader() {
       return liveHeader_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.getDefaultInstance() : liveHeader_;
     }
     /**
-     * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+     * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
      */
     public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeaderOrBuilder getLiveHeaderOrBuilder() {
-      return liveHeader_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.getDefaultInstance() : liveHeader_;
+      return getLiveHeader();
     }
 
     public static final int ACTION_FIELD_NUMBER = 3;
     private com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData action_;
     /**
-     * <code>required .CommonProtocol.ActionData Action = 3;</code>
+     * <code>.CommonProtocol.ActionData Action = 3;</code>
      */
     public boolean hasAction() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return action_ != null;
     }
     /**
-     * <code>required .CommonProtocol.ActionData Action = 3;</code>
+     * <code>.CommonProtocol.ActionData Action = 3;</code>
      */
     public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData getAction() {
       return action_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.getDefaultInstance() : action_;
     }
     /**
-     * <code>required .CommonProtocol.ActionData Action = 3;</code>
+     * <code>.CommonProtocol.ActionData Action = 3;</code>
      */
     public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionDataOrBuilder getActionOrBuilder() {
-      return action_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.getDefaultInstance() : action_;
+      return getAction();
     }
 
-    public static final int DATA_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString data_;
+    public static final int GROUP_FIELD_NUMBER = 4;
+    private com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData group_;
     /**
-     * <code>optional bytes Data = 4;</code>
+     * <code>.CommonProtocol.GroupData Group = 4;</code>
      */
-    public boolean hasData() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+    public boolean hasGroup() {
+      return group_ != null;
     }
     /**
-     * <code>optional bytes Data = 4;</code>
+     * <code>.CommonProtocol.GroupData Group = 4;</code>
+     */
+    public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData getGroup() {
+      return group_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.getDefaultInstance() : group_;
+    }
+    /**
+     * <code>.CommonProtocol.GroupData Group = 4;</code>
+     */
+    public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupDataOrBuilder getGroupOrBuilder() {
+      return getGroup();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 5;
+    private com.google.protobuf.ByteString data_;
+    /**
+     * <code>bytes Data = 5;</code>
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -2880,49 +2962,27 @@ public final class ProtocolModule {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasCommHeader()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLiveHeader()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAction()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getCommHeader().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getLiveHeader().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getAction().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (commHeader_ != null) {
         output.writeMessage(1, getCommHeader());
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (liveHeader_ != null) {
         output.writeMessage(2, getLiveHeader());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (action_ != null) {
         output.writeMessage(3, getAction());
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, data_);
+      if (group_ != null) {
+        output.writeMessage(4, getGroup());
       }
-      unknownFields.writeTo(output);
+      if (!data_.isEmpty()) {
+        output.writeBytes(5, data_);
+      }
     }
 
     public int getSerializedSize() {
@@ -2930,23 +2990,26 @@ public final class ProtocolModule {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (commHeader_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCommHeader());
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (liveHeader_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getLiveHeader());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (action_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getAction());
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (group_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, data_);
+          .computeMessageSize(4, getGroup());
       }
-      size += unknownFields.getSerializedSize();
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, data_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -2978,12 +3041,13 @@ public final class ProtocolModule {
         result = result && getAction()
             .equals(other.getAction());
       }
-      result = result && (hasData() == other.hasData());
-      if (hasData()) {
-        result = result && getData()
-            .equals(other.getData());
+      result = result && (hasGroup() == other.hasGroup());
+      if (hasGroup()) {
+        result = result && getGroup()
+            .equals(other.getGroup());
       }
-      result = result && unknownFields.equals(other.unknownFields);
+      result = result && getData()
+          .equals(other.getData());
       return result;
     }
 
@@ -3006,10 +3070,12 @@ public final class ProtocolModule {
         hash = (37 * hash) + ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getAction().hashCode();
       }
-      if (hasData()) {
-        hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getData().hashCode();
+      if (hasGroup()) {
+        hash = (37 * hash) + GROUP_FIELD_NUMBER;
+        hash = (53 * hash) + getGroup().hashCode();
       }
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3139,9 +3205,6 @@ public final class ProtocolModule {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getCommHeaderFieldBuilder();
-          getLiveHeaderFieldBuilder();
-          getActionFieldBuilder();
         }
       }
       public Builder clear() {
@@ -3149,23 +3212,29 @@ public final class ProtocolModule {
         if (commHeaderBuilder_ == null) {
           commHeader_ = null;
         } else {
-          commHeaderBuilder_.clear();
+          commHeader_ = null;
+          commHeaderBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (liveHeaderBuilder_ == null) {
           liveHeader_ = null;
         } else {
-          liveHeaderBuilder_.clear();
+          liveHeader_ = null;
+          liveHeaderBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (actionBuilder_ == null) {
           action_ = null;
         } else {
-          actionBuilder_.clear();
+          action_ = null;
+          actionBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        if (groupBuilder_ == null) {
+          group_ = null;
+        } else {
+          group_ = null;
+          groupBuilder_ = null;
+        }
         data_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+
         return this;
       }
 
@@ -3188,37 +3257,27 @@ public final class ProtocolModule {
 
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol buildPartial() {
         com.lianggzone.netty.entity.ProtocolModule.CommonProtocol result = new com.lianggzone.netty.entity.ProtocolModule.CommonProtocol(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
         if (commHeaderBuilder_ == null) {
           result.commHeader_ = commHeader_;
         } else {
           result.commHeader_ = commHeaderBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
         }
         if (liveHeaderBuilder_ == null) {
           result.liveHeader_ = liveHeader_;
         } else {
           result.liveHeader_ = liveHeaderBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
         if (actionBuilder_ == null) {
           result.action_ = action_;
         } else {
           result.action_ = actionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
+        if (groupBuilder_ == null) {
+          result.group_ = group_;
+        } else {
+          result.group_ = groupBuilder_.build();
         }
         result.data_ = data_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3269,33 +3328,17 @@ public final class ProtocolModule {
         if (other.hasAction()) {
           mergeAction(other.getAction());
         }
-        if (other.hasData()) {
+        if (other.hasGroup()) {
+          mergeGroup(other.getGroup());
+        }
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
-        if (!hasCommHeader()) {
-          return false;
-        }
-        if (!hasLiveHeader()) {
-          return false;
-        }
-        if (!hasAction()) {
-          return false;
-        }
-        if (!getCommHeader().isInitialized()) {
-          return false;
-        }
-        if (!getLiveHeader().isInitialized()) {
-          return false;
-        }
-        if (!getAction().isInitialized()) {
-          return false;
-        }
         return true;
       }
 
@@ -3316,19 +3359,18 @@ public final class ProtocolModule {
         }
         return this;
       }
-      private int bitField0_;
 
       private com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader commHeader_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeaderOrBuilder> commHeaderBuilder_;
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public boolean hasCommHeader() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return commHeaderBuilder_ != null || commHeader_ != null;
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader getCommHeader() {
         if (commHeaderBuilder_ == null) {
@@ -3338,7 +3380,7 @@ public final class ProtocolModule {
         }
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public Builder setCommHeader(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader value) {
         if (commHeaderBuilder_ == null) {
@@ -3350,11 +3392,11 @@ public final class ProtocolModule {
         } else {
           commHeaderBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public Builder setCommHeader(
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.Builder builderForValue) {
@@ -3364,17 +3406,15 @@ public final class ProtocolModule {
         } else {
           commHeaderBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public Builder mergeCommHeader(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader value) {
         if (commHeaderBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              commHeader_ != null &&
-              commHeader_ != com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.getDefaultInstance()) {
+          if (commHeader_ != null) {
             commHeader_ =
               com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.newBuilder(commHeader_).mergeFrom(value).buildPartial();
           } else {
@@ -3384,32 +3424,33 @@ public final class ProtocolModule {
         } else {
           commHeaderBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public Builder clearCommHeader() {
         if (commHeaderBuilder_ == null) {
           commHeader_ = null;
           onChanged();
         } else {
-          commHeaderBuilder_.clear();
+          commHeader_ = null;
+          commHeaderBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.Builder getCommHeaderBuilder() {
-        bitField0_ |= 0x00000001;
+        
         onChanged();
         return getCommHeaderFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeaderOrBuilder getCommHeaderOrBuilder() {
         if (commHeaderBuilder_ != null) {
@@ -3420,7 +3461,7 @@ public final class ProtocolModule {
         }
       }
       /**
-       * <code>required .CommonProtocol.CommonHeader CommHeader = 1;</code>
+       * <code>.CommonProtocol.CommonHeader CommHeader = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeader.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.CommonHeaderOrBuilder> 
@@ -3440,13 +3481,13 @@ public final class ProtocolModule {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeaderOrBuilder> liveHeaderBuilder_;
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public boolean hasLiveHeader() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return liveHeaderBuilder_ != null || liveHeader_ != null;
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader getLiveHeader() {
         if (liveHeaderBuilder_ == null) {
@@ -3456,7 +3497,7 @@ public final class ProtocolModule {
         }
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public Builder setLiveHeader(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader value) {
         if (liveHeaderBuilder_ == null) {
@@ -3468,11 +3509,11 @@ public final class ProtocolModule {
         } else {
           liveHeaderBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public Builder setLiveHeader(
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.Builder builderForValue) {
@@ -3482,17 +3523,15 @@ public final class ProtocolModule {
         } else {
           liveHeaderBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public Builder mergeLiveHeader(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader value) {
         if (liveHeaderBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              liveHeader_ != null &&
-              liveHeader_ != com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.getDefaultInstance()) {
+          if (liveHeader_ != null) {
             liveHeader_ =
               com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.newBuilder(liveHeader_).mergeFrom(value).buildPartial();
           } else {
@@ -3502,32 +3541,33 @@ public final class ProtocolModule {
         } else {
           liveHeaderBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public Builder clearLiveHeader() {
         if (liveHeaderBuilder_ == null) {
           liveHeader_ = null;
           onChanged();
         } else {
-          liveHeaderBuilder_.clear();
+          liveHeader_ = null;
+          liveHeaderBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.Builder getLiveHeaderBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getLiveHeaderFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeaderOrBuilder getLiveHeaderOrBuilder() {
         if (liveHeaderBuilder_ != null) {
@@ -3538,7 +3578,7 @@ public final class ProtocolModule {
         }
       }
       /**
-       * <code>required .CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
+       * <code>.CommonProtocol.LiveCommonHeader LiveHeader = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeader.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.LiveCommonHeaderOrBuilder> 
@@ -3558,13 +3598,13 @@ public final class ProtocolModule {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionDataOrBuilder> actionBuilder_;
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public boolean hasAction() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return actionBuilder_ != null || action_ != null;
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData getAction() {
         if (actionBuilder_ == null) {
@@ -3574,7 +3614,7 @@ public final class ProtocolModule {
         }
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public Builder setAction(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData value) {
         if (actionBuilder_ == null) {
@@ -3586,11 +3626,11 @@ public final class ProtocolModule {
         } else {
           actionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public Builder setAction(
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.Builder builderForValue) {
@@ -3600,17 +3640,15 @@ public final class ProtocolModule {
         } else {
           actionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public Builder mergeAction(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData value) {
         if (actionBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              action_ != null &&
-              action_ != com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.getDefaultInstance()) {
+          if (action_ != null) {
             action_ =
               com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.newBuilder(action_).mergeFrom(value).buildPartial();
           } else {
@@ -3620,32 +3658,33 @@ public final class ProtocolModule {
         } else {
           actionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public Builder clearAction() {
         if (actionBuilder_ == null) {
           action_ = null;
           onChanged();
         } else {
-          actionBuilder_.clear();
+          action_ = null;
+          actionBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+
         return this;
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.Builder getActionBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getActionFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionDataOrBuilder getActionOrBuilder() {
         if (actionBuilder_ != null) {
@@ -3656,7 +3695,7 @@ public final class ProtocolModule {
         }
       }
       /**
-       * <code>required .CommonProtocol.ActionData Action = 3;</code>
+       * <code>.CommonProtocol.ActionData Action = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionData.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.ActionDataOrBuilder> 
@@ -3672,48 +3711,159 @@ public final class ProtocolModule {
         return actionBuilder_;
       }
 
-      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      private com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData group_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupDataOrBuilder> groupBuilder_;
       /**
-       * <code>optional bytes Data = 4;</code>
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
        */
-      public boolean hasData() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+      public boolean hasGroup() {
+        return groupBuilder_ != null || group_ != null;
       }
       /**
-       * <code>optional bytes Data = 4;</code>
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData getGroup() {
+        if (groupBuilder_ == null) {
+          return group_ == null ? com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.getDefaultInstance() : group_;
+        } else {
+          return groupBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      public Builder setGroup(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData value) {
+        if (groupBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          group_ = value;
+          onChanged();
+        } else {
+          groupBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      public Builder setGroup(
+          com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder builderForValue) {
+        if (groupBuilder_ == null) {
+          group_ = builderForValue.build();
+          onChanged();
+        } else {
+          groupBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      public Builder mergeGroup(com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData value) {
+        if (groupBuilder_ == null) {
+          if (group_ != null) {
+            group_ =
+              com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.newBuilder(group_).mergeFrom(value).buildPartial();
+          } else {
+            group_ = value;
+          }
+          onChanged();
+        } else {
+          groupBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      public Builder clearGroup() {
+        if (groupBuilder_ == null) {
+          group_ = null;
+          onChanged();
+        } else {
+          group_ = null;
+          groupBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder getGroupBuilder() {
+        
+        onChanged();
+        return getGroupFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      public com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupDataOrBuilder getGroupOrBuilder() {
+        if (groupBuilder_ != null) {
+          return groupBuilder_.getMessageOrBuilder();
+        } else {
+          return group_ == null ?
+              com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.getDefaultInstance() : group_;
+        }
+      }
+      /**
+       * <code>.CommonProtocol.GroupData Group = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupDataOrBuilder> 
+          getGroupFieldBuilder() {
+        if (groupBuilder_ == null) {
+          groupBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupData.Builder, com.lianggzone.netty.entity.ProtocolModule.CommonProtocol.GroupDataOrBuilder>(
+                  getGroup(),
+                  getParentForChildren(),
+                  isClean());
+          group_ = null;
+        }
+        return groupBuilder_;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes Data = 5;</code>
        */
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
-       * <code>optional bytes Data = 4;</code>
+       * <code>bytes Data = 5;</code>
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
         data_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bytes Data = 4;</code>
+       * <code>bytes Data = 5;</code>
        */
       public Builder clearData() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         data_ = getDefaultInstance().getData();
         onChanged();
         return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -3730,7 +3880,7 @@ public final class ProtocolModule {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<CommonProtocol>
+    private static final com.google.protobuf.Parser<CommonProtocol>
         PARSER = new com.google.protobuf.AbstractParser<CommonProtocol>() {
       public CommonProtocol parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -3775,6 +3925,11 @@ public final class ProtocolModule {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CommonProtocol_ActionData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CommonProtocol_GroupData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CommonProtocol_GroupData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3784,20 +3939,22 @@ public final class ProtocolModule {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ProtocolModule.proto\"\331\003\n\016CommonProtoco" +
-      "l\0220\n\nCommHeader\030\001 \002(\0132\034.CommonProtocol.C" +
-      "ommonHeader\0224\n\nLiveHeader\030\002 \002(\0132 .Common" +
-      "Protocol.LiveCommonHeader\022*\n\006Action\030\003 \002(" +
-      "\0132\032.CommonProtocol.ActionData\022\014\n\004Data\030\004 " +
-      "\001(\014\032R\n\014CommonHeader\022\021\n\tCommandId\030\001 \002(\r\022\r" +
-      "\n\005SeqId\030\002 \002(\r\022\017\n\007Version\030\003 \002(\r\022\017\n\007FromUi" +
-      "d\030\004 \001(\t\032\204\001\n\020LiveCommonHeader\022\020\n\010LiveType" +
-      "\030\001 \002(\r\022\016\n\006LiveId\030\002 \002(\r\022\022\n\nDemandType\030\003 \002" +
-      "(\r\022\020\n\010DemandId\030\004 \002(\r\022\022\n\nToDemandId\030\005 \001(\r",
-      "\022\024\n\014ToDemandType\030\006 \001(\r\032J\n\nActionData\022\014\n\004" +
-      "Type\030\001 \002(\r\022\014\n\004Area\030\002 \002(\r\022\017\n\007Command\030\003 \002(" +
-      "\r\022\017\n\007Message\030\004 \001(\tB-\n\033com.lianggzone.net" +
-      "ty.entityB\016ProtocolModule"
+      "\n\024ProtocolModule.proto\"\255\004\n\016CommonProtoco" +
+      "l\0220\n\nCommHeader\030\001 \001(\0132\034.CommonProtocol.C" +
+      "ommonHeader\0224\n\nLiveHeader\030\002 \001(\0132 .Common" +
+      "Protocol.LiveCommonHeader\022*\n\006Action\030\003 \001(" +
+      "\0132\032.CommonProtocol.ActionData\022(\n\005Group\030\004" +
+      " \001(\0132\031.CommonProtocol.GroupData\022\014\n\004Data\030" +
+      "\005 \001(\014\032R\n\014CommonHeader\022\021\n\tCommandId\030\001 \001(\r" +
+      "\022\r\n\005SeqId\030\002 \001(\r\022\017\n\007Version\030\003 \001(\r\022\017\n\007From" +
+      "Uid\030\004 \001(\t\032\204\001\n\020LiveCommonHeader\022\020\n\010LiveTy" +
+      "pe\030\001 \001(\r\022\016\n\006LiveId\030\002 \001(\r\022\022\n\nDemandType\030\003",
+      " \001(\r\022\020\n\010DemandId\030\004 \001(\r\022\022\n\nToDemandId\030\005 \001" +
+      "(\r\022\024\n\014ToDemandType\030\006 \001(\r\032J\n\nActionData\022\014" +
+      "\n\004Type\030\001 \001(\r\022\014\n\004Area\030\002 \001(\r\022\017\n\007Command\030\003 " +
+      "\001(\r\022\017\n\007Message\030\004 \001(\t\032(\n\tGroupData\022\n\n\002Id\030" +
+      "\001 \001(\r\022\017\n\007Command\030\002 \001(\rB-\n\033com.lianggzone" +
+      ".netty.entityB\016ProtocolModuleb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3816,7 +3973,7 @@ public final class ProtocolModule {
     internal_static_CommonProtocol_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CommonProtocol_descriptor,
-        new java.lang.String[] { "CommHeader", "LiveHeader", "Action", "Data", });
+        new java.lang.String[] { "CommHeader", "LiveHeader", "Action", "Group", "Data", });
     internal_static_CommonProtocol_CommonHeader_descriptor =
       internal_static_CommonProtocol_descriptor.getNestedTypes().get(0);
     internal_static_CommonProtocol_CommonHeader_fieldAccessorTable = new
@@ -3835,6 +3992,12 @@ public final class ProtocolModule {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CommonProtocol_ActionData_descriptor,
         new java.lang.String[] { "Type", "Area", "Command", "Message", });
+    internal_static_CommonProtocol_GroupData_descriptor =
+      internal_static_CommonProtocol_descriptor.getNestedTypes().get(3);
+    internal_static_CommonProtocol_GroupData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CommonProtocol_GroupData_descriptor,
+        new java.lang.String[] { "Id", "Command", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
